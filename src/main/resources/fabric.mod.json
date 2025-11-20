@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "armorstand359",
+  "version": "${version}",
+  "name": "ArmorStand359",
+  "description": "Show armorstand hitbox.",
+  "authors": ["eofitg"],
+  "license": "MIT",
+  "environment": "client",
+  "mixins": [
+    "armorstand359.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}"
+  }
+}
