@@ -9,9 +9,9 @@ import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 
-public class HitboxRenderer {
+public class OverlayRenderer {
 
-    public static void renderArmorStandHitbox(MatrixStack matrices, Vec3d cameraPos) {
+    public static void renderArmorStandOverlay(MatrixStack matrices, Vec3d cameraPos) {
         MinecraftClient client = MinecraftClient.getInstance();
         if (client.world == null || client.getBufferBuilders() == null) return;
 
@@ -24,7 +24,8 @@ public class HitboxRenderer {
         Box area = new Box(playerPos.add(-range, -range, -range), playerPos.add(range, range, range));
 
         for (ArmorStandEntity entity : client.world.getEntitiesByType(net.minecraft.entity.EntityType.ARMOR_STAND, area, entity -> true)) {
-            renderHitbox(matrices, vertexConsumer, cameraPos, entity);
+            entity.setCustomNameVisible(true);
+            //renderHitbox(matrices, vertexConsumer, cameraPos, entity);
         }
 
         vertexConsumers.draw();
@@ -32,7 +33,6 @@ public class HitboxRenderer {
 
     private static void renderHitbox(MatrixStack matrices, VertexConsumer vertexConsumer, Vec3d cameraPos, ArmorStandEntity armorStand) {
         Box hitbox = armorStand.getBoundingBox();
-        armorStand.setCustomNameVisible(true);
 
         double x = hitbox.minX - cameraPos.x;
         double y = hitbox.minY - cameraPos.y;

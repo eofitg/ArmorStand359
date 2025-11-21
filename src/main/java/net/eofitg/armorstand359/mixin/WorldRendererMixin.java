@@ -1,6 +1,6 @@
 package net.eofitg.armorstand359.mixin;
 
-import net.eofitg.armorstand359.renderer.HitboxRenderer;
+import net.eofitg.armorstand359.renderer.OverlayRenderer;
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import org.spongepowered.asm.mixin.Mixin;
@@ -27,6 +27,6 @@ public class WorldRendererMixin {
     ) {
         MatrixStack matrices = new MatrixStack();
         matrices.multiplyPositionMatrix(positionMatrix);
-        HitboxRenderer.renderArmorStandHitbox(matrices, camera.getPos());
+        OverlayRenderer.renderArmorStandOverlay(matrices, camera.getPos());
     }
 }
