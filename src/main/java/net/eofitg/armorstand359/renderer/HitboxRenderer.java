@@ -32,6 +32,7 @@ public class HitboxRenderer {
 
     private static void renderHitbox(MatrixStack matrices, VertexConsumer vertexConsumer, Vec3d cameraPos, ArmorStandEntity armorStand) {
         Box hitbox = armorStand.getBoundingBox();
+        armorStand.setCustomNameVisible(true);
 
         double x = hitbox.minX - cameraPos.x;
         double y = hitbox.minY - cameraPos.y;
