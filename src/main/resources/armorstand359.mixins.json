@@ -4,7 +4,7 @@
   "package": "net.eofitg.armorstand359.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "WorldRendererMixin"
+    "ArmorStandRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

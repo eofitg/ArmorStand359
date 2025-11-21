@@ -3,10 +3,15 @@
   "id": "armorstand359",
   "version": "${version}",
   "name": "ArmorStand359",
-  "description": "Show armorstand hitbox.",
+  "description": "Clear armorstand.",
   "authors": ["eofitg"],
   "license": "MIT",
   "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.eofitg.armorstand359.ArmorStand359"
+    ]
+  },
   "mixins": [
     "armorstand359.mixins.json"
   ],
