@@ -7,4 +7,4 @@ Clear armor stands for 1.21.10.
 - `/armorstand set/reset`
 
 ## Known Issue
-- `reset` doesn't work...
+- `reset` seems not work, but you can still reset the target by relaunch the client (so I'm just leave that for now)
