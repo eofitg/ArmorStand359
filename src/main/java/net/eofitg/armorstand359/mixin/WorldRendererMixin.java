@@ -2,7 +2,6 @@ package net.eofitg.armorstand359.mixin;
 
 import net.eofitg.armorstand359.renderer.OverlayRenderer;
 import net.minecraft.client.render.WorldRenderer;
-import net.minecraft.client.util.math.MatrixStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -10,7 +9,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(WorldRenderer.class)
 public class WorldRendererMixin {
-
     @Inject(method = "render", at = @At("TAIL"))
     private void onRender(
             net.minecraft.client.util.ObjectAllocator allocator,
@@ -25,8 +23,6 @@ public class WorldRendererMixin {
             boolean renderSky,
             CallbackInfo ci
     ) {
-        MatrixStack matrices = new MatrixStack();
-        matrices.multiplyPositionMatrix(positionMatrix);
-        OverlayRenderer.renderArmorStandOverlay(matrices, camera.getPos());
+        OverlayRenderer.renderArmorStandOverlay();
     }
 }
