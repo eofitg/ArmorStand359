@@ -59,7 +59,7 @@ public class ArmorStandCommand {
     }
 
     private static void showHelp(FabricClientCommandSource source) {
-        source.sendFeedback(Text.literal("/armorstand toggle|depth|set|reset"));
+        source.sendFeedback(Text.literal("/armorstand toggle|set|reset"));
     }
 
     private static int toggle(FabricClientCommandSource source) {
